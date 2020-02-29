@@ -11,6 +11,7 @@ const routes = require("./routes/adventure-api-routes")
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -28,21 +29,13 @@ Handlebars.registerHelper('splitB', (optionB)=>{
     const str = optionB.split(",")
     return optionB.split(",").slice(2,str.length)
 });
-// app.use(routes)
+app.use(routes)
 const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
   password: 'password',
   database: 'adventure_db'
-})
-
-app.get("/",(req,res)=>{
-    connection.query("SELECT * FROM scenarios WHERE id = 1",(err, data)=>{
-        if (err) throw err;
-        console.log(data)
-        res.render("index", {scenarios : data})
-    })
 })
 
 app.listen(PORT, ()=>{

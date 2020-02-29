@@ -4,10 +4,12 @@
  <div>
         <form>
             {{#each scenarios}}
-            <p id="situation">{{this.scenario}}</p>
-            <button id="a" type="submit" value={{this.choiceA}}>Sample text makes these bigger</button>
-            <button id="b" type="submit" value={{this.choiceB}}>Sample text</button>
+                <p id="situation">{{this.scenario}}</p>
+                <button id="a" type="submit" value={{this.choiceA}}>{{splitScene this.scenario}}</button>
+                <button id="b" type="submit" value={{this.choiceB}}>Sample text</button>
             {{/each}}
         </form>
+        <script>
+			});</script>
     </div>
 

@@ -1,4 +1,4 @@
 USE adventure_db;
 
 INSERT INTO scenarios (scenario, choiceA, choiceB)
-VALUES ("tee",2,3), ("see",4,5), ("nee",6,7) ;
+VALUES ("tee,see,fee",2,3), ("see,ddd,ffff",4,5), ("nee,aaaa,bbege",6,7);

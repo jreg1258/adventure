@@ -1,12 +1,12 @@
-var express = require('express')
-var exphbs = require('express-handlebars')
-var mysql = require('mysql')
-
-var app = express()
+const express = require('express')
+const exphbs = require('express-handlebars')
+const mysql = require('mysql')
+const Handlebars = require('handlebars')
+const app = express()
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 3080
+const PORT = process.env.PORT || 3080
 const routes = require("./routes/adventure-api-routes")
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }))
@@ -14,8 +14,13 @@ app.use(express.json())
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+//custom handlebars helper to split scenario column
+Handlebars.registerHelper('splitScene', (scene)=>{
+    return scene.split(",").slice(-1,str.length-2)
+});
 // app.use(routes)
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',

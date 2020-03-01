@@ -5,9 +5,10 @@ CREATE DATABASE adventure_db;
 USE adventure_db;
 
 CREATE TABLE scenarios(
-    id integer not null auto_increment,
-    scenario varchar(255),
-    choiceA integer not null,
-    choiceB integer not null,
-    primary key(id)
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    scenario VARCHAR(255),
+    choiceA INTEGER NOT NULL,
+    choiceB INTEGER NOT NULL,
+    PRIMARY KEY(id)
 );
+

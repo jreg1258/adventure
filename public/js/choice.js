@@ -12,7 +12,7 @@ $(gameSpace).on("submit", (event)=>{
     
     $.get("/"+choice, (data)=>{
         id: data
-    }).then(function() {
+    }).then(()=>{
         window.location.href = "/"+choice;
       })
 })

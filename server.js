@@ -3,15 +3,17 @@ const exphbs = require('express-handlebars')
 const mysql = require('mysql')
 const Handlebars = require('handlebars')
 const app = express()
-
+const path = require("path")
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 3080
-const routes = require("./routes/adventure-api-routes")
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
 app.use(express.static(path.join(__dirname, 'public')))
+
+//require("./routes/adventure-api-routes")(app);
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -29,13 +31,28 @@ Handlebars.registerHelper('splitB', (optionB)=>{
     const str = optionB.split(",")
     return optionB.split(",").slice(2,str.length)
 });
-app.use(routes)
+
 const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
   password: 'password',
   database: 'adventure_db'
+})
+
+app.get("/",(req,res)=>{
+    connection.query("SELECT * FROM scenarios WHERE id = 1",(err, data)=>{
+        if (err) throw err;
+        res.render("index", {scenarios : data})
+    })
+})
+
+app.get("/:id", (req,res)=>{
+    console.log(req.params)
+    connection.query("SELECT * FROM scenarios WHERE id ="+req.params.id,(err, data)=>{
+        if (err) throw err;
+        res.render("index", {scenarios : data})
+    })
 })
 
 app.listen(PORT, ()=>{

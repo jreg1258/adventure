@@ -1,8 +1,17 @@
 #image {
+    position: relative;
+	bottom: -240px;
     height: 256px;
     width: 256px;
     background: url('spritestrip.webp') 0px 0px;
     margin: 0px;
+}
+
+#background{
+	position: absolute;
+	background: url('https://i.pinimg.com/originals/98/e8/86/98e886c01b66c66d90a7b0bbc0975205.png') 0px 0px;
+	height: 520px;
+	width: 560px;
 }
 
 #demo {

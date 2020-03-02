@@ -1,13 +1,14 @@
-<h1>Bagel Adventure</h1>
-
-
- <div>
-        <form id="gameSpace">
-            {{#each scenarios}}
-                <p id="situation">{{splitScene this.scenario}}</p>
-                <button href="/{{this.choiceA}}" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
-                <button href="/{{this.choiceB}}" id="b" type="submit" value={{this.choiceB}}>{{splitB this.scenario}}</button>
-            {{/each}}
-        </form>
-    </div>
-
+ 
+ <div class="col-9" id="gameDiv">
+     <div id="demo">
+		<p id="image" onmouseover="animateScript()" onmouseout="stopAnimate()">  </p>
+	</div>
+    <form id="gameSpace">
+        {{#each scenarios}}
+            <p id="situation">{{splitScene this.scenario}}</p>
+            <button href="/{{this.choiceA}}" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
+            <button href="/{{this.choiceB}}" id="b" type="submit" value={{this.choiceB}}>{{splitB this.scenario}}</button>
+        {{/each}}
+    </form>
+</div>
+<div class="col" id="choicePane"></div>

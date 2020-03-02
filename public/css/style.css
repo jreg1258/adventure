@@ -1,0 +1,34 @@
+#image {
+    height: 256px;
+    width: 256px;
+    background: url('spritestrip.webp') 0px 0px;
+    margin: 0px;
+}
+
+#demo {
+    margin: auto;
+    width: 30%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#gameSpace {
+    overflow: auto;
+}
+#gameDiv {
+    height: 500px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#choicePane {
+    margin: 0px;
+    padding: 0px;
+    background-color: aqua;
+}
+
+body,html {
+    height: 100%;
+}

@@ -1,6 +1,6 @@
 const optionA = $("#a")
 const optionB = $("#b")
-const gameSpace = $("#gameSpace")
+const playerSpace = $("#playerSpace")
 const a = optionA.val().trim()
 const b = optionB.val().trim()
 let sprite; //we will use this variable to clear the setInterval()
@@ -20,15 +20,13 @@ const animateScript = ()=>{
                 { position = 256; }//reset the position to 256px, once position exceeds 1536px
 },100)};
 
-$(gameSpace).on("submit", (event)=>{
+$(playerSpace).on("submit", (event)=>{
     event.preventDefault()
-    const choice = $(document.activeElement).val()
-    
+    const choice = $(document.activeElement).val();
     $.get("/"+choice, (data)=>{
         id: data
     }).then(()=>{
         window.location.href = "/"+choice;
-      })
+      });
 })
 
-  

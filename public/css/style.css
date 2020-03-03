@@ -7,10 +7,11 @@
     margin: 0px;
 }
 
+.bg1{background: url('bg.png') 0px 0px;}
+
 #background{
 	position: absolute;
-	background: url('https://i.pinimg.com/originals/98/e8/86/98e886c01b66c66d90a7b0bbc0975205.png') 0px 0px;
-	height: 520px;
+	height: 500px;
 	width: 560px;
 }
 
@@ -19,15 +20,17 @@
     width: 30%;
 }
 
-
-
 h1 {
     text-align: center;
 }
 
-#gameSpace {
+#playerSpace {
     overflow: auto;
+    position: relative;
+    top: 250px;
+    right: -300px;
 }
+
 #gameDiv {
     height: 500px;
     padding: 0px;

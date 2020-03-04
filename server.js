@@ -36,7 +36,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: 'password',
+  password: 'Kittylitter11',
   database: 'adventure_db'
 })
 
@@ -46,7 +46,6 @@ app.get("/",(req,res)=>{
         res.render("index", {scenarios : data})
     })
 })
-
 app.get("/:id", (req,res)=>{
     console.log(req.params)
     connection.query("SELECT * FROM scenarios WHERE id ="+req.params.id,(err, data)=>{

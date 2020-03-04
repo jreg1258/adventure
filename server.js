@@ -36,7 +36,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: 'Password',
+  password: 'Kittylitter11',
   database: 'adventure_db'
 })
 
@@ -53,6 +53,7 @@ app.get("/:id", (req,res)=>{
         res.render("index", {scenarios : data})
     })
 })
+
 
 app.listen(PORT, ()=>{
     connection.connect(function (err) {

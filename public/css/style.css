@@ -46,6 +46,7 @@ position: relative;
 
 #gameDiv {
     height: 500px;
+    width: 500px;
     padding: 0px;
     margin: 0px;
 }

@@ -22,7 +22,7 @@ const animateScript = () => {
 		if (left < 200)
 			{ left = left + 10;}
 		else
-			{left = -220;}
+			{left = -115;}
   }, 100)
 }
 

@@ -1,11 +1,11 @@
 body {
-	background: url('https://blog.bibleclipart.net/wp-content/uploads/2016/10/crumpled-brown-paper-powerpoint-background.jpg') 0px 0px;
+	background: url('https://cms.splendidtable.org/sites/default/files/styles/w2000/public/bagel-pile-LEDE.jpg?itok=fId8NqN_') 0px 0px;
 	}
 
 #image {
     position: relative;
     bottom: -240px;
-    left: -115px;
+    left: -200px;
     height: 256px;
     width: 256px;
     background: url('spritestrip.webp') 0px 0px;
@@ -42,7 +42,25 @@ h1 {
     overflow: auto;
     position: relative;
     top: 250px;
-    right: -165px;
+    right: 20px;
+    text-align: center;
+}
+
+#situation {
+    margin: auto;
+    font-family: 'Trade Winds', cursive;
+    color: rgb(224, 224, 224);
+    text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+#a, #b{
+    margin: 2px;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 #gameDiv {
@@ -52,7 +70,7 @@ h1 {
     margin: 0px;
 }
 
-#choicePane {
+#choicePane,#descriptionPane {
     margin: 0px;
     padding: 0px;
     background-color: aqua;
@@ -61,8 +79,15 @@ h1 {
     overflow: scroll;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(224, 224, 224);
+    background: rgba(25, 145, 201, 0.811);
 }
 
 body,html {
     height: 100%;
+}
+
+#nav {
+    padding-top: 2px;
+    padding-bottom: 2px;
 }

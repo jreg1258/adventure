@@ -32,16 +32,17 @@ h1 {
 
 #gameSpace {
     overflow: auto;
-position: relative;
+    position: relative;
     top: 250px;
     right: -300px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #playerSpace {
     overflow: auto;
     position: relative;
     top: 250px;
-    right: -300px;
+    right: -165px;
 }
 
 #gameDiv {
@@ -58,6 +59,8 @@ position: relative;
     height: 500px;
     width: 285px;
     overflow: scroll;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 body,html {

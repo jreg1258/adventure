@@ -43,12 +43,17 @@ const connection = mysql.createConnection({
 app.get("/",(req,res)=>{
     connection.query("SELECT * FROM scenarios WHERE id = 1",(err, data)=>{
         if (err) throw err;
-        res.render("index", {scenarios : data})
+        connection.query("DELETE FROM choices",(err,data2)=>{
+            if (err) throw err;
+            res.render("index", {scenarios : data,
+                                  choices: data2
+                                })
     })
-})
+})})
 app.get("/:id", (req,res)=>{
     
     connection.query("SELECT * FROM scenarios WHERE id ="+req.params.id,(err, data)=>{
+        if (err) throw err;
         connection.query("SELECT * FROM choices",(err,data2)=>{
             if (err) throw err;
             res.render("index", {scenarios : data,
@@ -60,7 +65,7 @@ app.get("/:id", (req,res)=>{
 })
 
 app.post("/:id", function(req, res) {
-    console.log(req.body)
+    
     connection.query("INSERT INTO choices(choice) VALUES (?)",req.body.choice,(err,data)=>{    
         if (err) throw err;
     });});

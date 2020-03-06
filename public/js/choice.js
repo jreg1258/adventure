@@ -11,11 +11,9 @@ const stopAnimate = ()=>{
 
 const animateScript = ()=>{
     let position = 256; //start position for the image slicer
-    let right = 0;
 
     sprite = setInterval(()=>{
-        document.getElementById("image").style.backgroundPosition = `-${position}px 0px`; 
-        document.getElementById("image").style.backgroundPosition = `${right}px`; 
+        document.getElementById("image").style.backgroundPosition = `-${position}px 0px`;  
             if (position < 1536)
                 { position = position + 256;}//we increment the position by 256 each time
             else
@@ -38,5 +36,3 @@ $(playerSpace).on("submit", (event)=>{
         window.location.href = "/"+choice;
       });
 })
-
-

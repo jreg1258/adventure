@@ -12,3 +12,8 @@ CREATE TABLE scenarios(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE choices(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    choice VARCHAR(500),
+    PRIMARY KEY(id)
+);

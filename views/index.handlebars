@@ -12,4 +12,9 @@
         {{/each}}
     </form>
 </div>
-<div class="col" id="choicePane"></div>
+<div class="col" id="choicePane">
+        {{#each choices}}
+            <p>{{this.choice}}</p>
+            {{/each}}
+        
+</div>

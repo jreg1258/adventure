@@ -36,7 +36,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: 'Password',
+  password: 'password',
   database: 'adventure_db'
 })
 
@@ -47,12 +47,25 @@ app.get("/",(req,res)=>{
     })
 })
 app.get("/:id", (req,res)=>{
-    console.log(req.params)
+    
     connection.query("SELECT * FROM scenarios WHERE id ="+req.params.id,(err, data)=>{
-        if (err) throw err;
-        res.render("index", {scenarios : data})
+        connection.query("SELECT * FROM choices",(err,data2)=>{
+            if (err) throw err;
+            res.render("index", {scenarios : data,
+                                  choices: data2
+                                })
+        })
+       
     })
 })
+
+app.post("/:id", function(req, res) {
+    console.log(req.body)
+    connection.query("INSERT INTO choices(choice) VALUES (?)",req.body.choice,(err,data)=>{    
+        if (err) throw err;
+        res.render("index", {choices : data})
+    });});
+
 
 app.listen(PORT, ()=>{
     connection.connect(function (err) {

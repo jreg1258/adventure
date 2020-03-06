@@ -4,6 +4,7 @@ const mysql = require('mysql')
 const Handlebars = require('handlebars')
 const app = express()
 const path = require("path")
+let connection;
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 3080
@@ -32,13 +33,18 @@ Handlebars.registerHelper('splitB', (optionB)=>{
     return optionB.split("@").slice(2,str.length)
 });
 
-const connection = mysql.createConnection({
+
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
   password: 'password',
   database: 'adventure_db'
-})
+})}
+
 
 app.get("/",(req,res)=>{
     connection.query("SELECT * FROM scenarios WHERE id = 1",(err, data)=>{
@@ -78,3 +84,6 @@ app.listen(PORT, ()=>{
     console.log("Listening on http://localhost:"+PORT)
     console.log('connected as id ' + connection.threadId)
 })})
+
+
+

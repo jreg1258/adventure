@@ -11,11 +11,18 @@ const stopAnimate = () => {
 
 const animateScript = () => {
   let position = 256 // start position for the image slicer
-
+  let right = 0;
   sprite = setInterval(() => {
     document.getElementById('image').style.backgroundPosition = `-${position}px 0px`
-    if (position < 1536) { position = position + 256 }// we increment the position by 256 each time
-    else { position = 256 }// reset the position to 256px, once position exceeds 1536px
+      if (position < 1536)
+        { position = position + 256 }// we increment the position by 256 each time
+      else 
+        { position = 256 }// reset the position to 256px, once position exceeds 1536px
+    document.getElementById("image").style.right = `${right}px`;
+      if (right > -560)
+        { right = right - 10;}
+      else
+        {right = 0;}
   }, 100)
 }
 

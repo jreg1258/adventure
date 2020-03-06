@@ -26,6 +26,10 @@ const animateScript = () => {
   }, 100)
 }
 
+$(document).ready(()=>{
+  animateScript()
+})
+
 $(playerSpace).on('submit', (event) => {
   event.preventDefault()
   const choice = $(document.activeElement).val()

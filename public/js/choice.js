@@ -18,11 +18,11 @@ const animateScript = () => {
         { position = position + 256 }// we increment the position by 256 each time
       else 
         { position = 256 }// reset the position to 256px, once position exceeds 1536px
-    document.getElementById("image").style.right = `${right}px`;
-      if (right > -560)
-        { right = right - 10;}
-      else
-        {right = 0;}
+    document.getElementById("image").style.left = `${left}px`;
+		if (left < 200)
+			{ left = left + 10;}
+		else
+			{left = -220;}
   }, 100)
 }
 

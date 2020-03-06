@@ -1,6 +1,11 @@
+body {
+	background: url('https://blog.bibleclipart.net/wp-content/uploads/2016/10/crumpled-brown-paper-powerpoint-background.jpg') 0px 0px;
+	}
+
 #image {
     position: relative;
-	bottom: -240px;
+    bottom: -240px;
+    left: -220px;
     height: 256px;
     width: 256px;
     background: url('spritestrip.webp') 0px 0px;
@@ -13,6 +18,7 @@
 	position: absolute;
 	height: 500px;
 	width: 560px;
+	left: 0px;
 }
 
 #demo {

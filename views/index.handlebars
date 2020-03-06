@@ -1,4 +1,10 @@
- <div class="col"></div>
+ <div class="col" id="descriptionPane">
+     <p>Welcome to your Bagel Adventure! 
+         This is a game designed to show tou the error of your ways, 
+         in attempts to feed yourself. Choices made will be displayed in the pane on the right of the play area,
+          so feel free to see all the bad choices you've made! 
+          Hopefully, you learn a thing or two from your past self...</p>
+ </div>
  <div class="col-7" id="gameDiv">
      <div id="demo">
          <p class="bg1" id="background"></p>
@@ -6,15 +12,15 @@
 	</div>
     <form id="playerSpace">
         {{#each scenarios}}
-            <p id="situation">{{splitScene this.scenario}}</p>
-            <button href="/{{this.choiceA}}" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
-            <button href="/{{this.choiceB}}" id="b" type="submit" value={{this.choiceB}}>{{splitB this.scenario}}</button>
+            <h4 id="situation">{{splitScene this.scenario}}</h4>
+            <button href="/{{this.choiceA}}" class="btn btn-info" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
+            <button href="/{{this.choiceB}}" class="btn btn-info" id="b" type="submit" value={{this.choiceB}}>{{splitB this.scenario}}</button>
         {{/each}}
     </form>
 </div>
 <div class="col" id="choicePane">
         {{#each choices}}
-            <p>{{this.choice}}</p>
+            <p id="choice">{{this.choice}}</p>
             {{/each}}
         
 </div>

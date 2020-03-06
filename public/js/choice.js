@@ -11,7 +11,7 @@ const stopAnimate = () => {
 
 const animateScript = () => {
   let position = 256 // start position for the image slicer
-  let right = 0;
+  let left = -220;
   sprite = setInterval(() => {
     document.getElementById('image').style.backgroundPosition = `-${position}px 0px`
       if (position < 1536)

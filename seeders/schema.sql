@@ -6,9 +6,14 @@ USE adventure_db;
 
 CREATE TABLE scenarios(
     id INTEGER NOT NULL AUTO_INCREMENT,
-    scenario VARCHAR(255),
+    scenario VARCHAR(500),
     choiceA INTEGER NOT NULL,
     choiceB INTEGER NOT NULL,
     PRIMARY KEY(id)
 );
 
+CREATE TABLE choices(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    choice VARCHAR(500),
+    PRIMARY KEY(id)
+);

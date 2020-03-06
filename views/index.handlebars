@@ -1,9 +1,10 @@
  
  <div class="col-9" id="gameDiv">
      <div id="demo">
+         <p class="bg1" id="background"></p>
 		<p id="image" onmouseover="animateScript()" onmouseout="stopAnimate()">  </p>
 	</div>
-    <form id="gameSpace">
+    <form id="playerSpace">
         {{#each scenarios}}
             <p id="situation">{{splitScene this.scenario}}</p>
             <button href="/{{this.choiceA}}" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
@@ -11,4 +12,9 @@
         {{/each}}
     </form>
 </div>
-<div class="col" id="choicePane"></div>
+<div class="col" id="choicePane">
+        {{#each choices}}
+            <p>{{this.choice}}</p>
+            {{/each}}
+        
+</div>

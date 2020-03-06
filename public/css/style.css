@@ -1,8 +1,18 @@
 #image {
+    position: relative;
+	bottom: -240px;
     height: 256px;
     width: 256px;
     background: url('spritestrip.webp') 0px 0px;
     margin: 0px;
+}
+
+.bg1{background: url('bg.png') 0px 0px;}
+
+#background{
+	position: absolute;
+	height: 500px;
+	width: 560px;
 }
 
 #demo {
@@ -14,9 +24,13 @@ h1 {
     text-align: center;
 }
 
-#gameSpace {
+#playerSpace {
     overflow: auto;
+    position: relative;
+    top: 250px;
+    right: -300px;
 }
+
 #gameDiv {
     height: 500px;
     padding: 0px;
@@ -27,6 +41,9 @@ h1 {
     margin: 0px;
     padding: 0px;
     background-color: aqua;
+    height: 500px;
+    width: 285px;
+    overflow: scroll;
 }
 
 body,html {

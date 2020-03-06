@@ -63,7 +63,6 @@ app.post("/:id", function(req, res) {
     console.log(req.body)
     connection.query("INSERT INTO choices(choice) VALUES (?)",req.body.choice,(err,data)=>{    
         if (err) throw err;
-        res.render("index", {choices : data})
     });});
 
 

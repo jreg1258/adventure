@@ -47,7 +47,7 @@ if (process.env.JAWSDB_URL) {
 
 
 app.get("/",(req,res)=>{
-    connection.query("SELECT * FROM scenarios WHERE id = 1",(err, data)=>{
+    connection.query("SELECT * FROM scenarios WHERE id = (?)",1,(err, data)=>{
         if (err) throw err;
         connection.query("DELETE FROM choices",(err,data2)=>{
             if (err) throw err;
@@ -58,7 +58,7 @@ app.get("/",(req,res)=>{
 })})
 app.get("/:id", (req,res)=>{
     
-    connection.query("SELECT * FROM scenarios WHERE id ="+req.params.id,(err, data)=>{
+    connection.query("SELECT * FROM scenarios WHERE id = (?)",req.params.id,(err, data)=>{
         if (err) throw err;
         connection.query("SELECT * FROM choices",(err,data2)=>{
             if (err) throw err;

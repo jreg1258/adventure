@@ -13,8 +13,8 @@
     <form id="playerSpace">
         {{#each scenarios}}
             <h4 id="situation">{{splitScene this.scenario}}</h4>
-            <button href="/{{this.choiceA}}" class="btn btn-info" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
-            <button href="/{{this.choiceB}}" class="btn btn-info" id="b" type="submit" value={{this.choiceB}}>{{splitB this.scenario}}</button>
+            <button href="/{{this.choiceA}}" class="btn btn-success" id="a" type="submit" value={{this.choiceA}}>{{splitA this.scenario}}</button>
+            <button href="/{{this.choiceB}}" class="btn btn-success" id="b" type="submit" value={{this.choiceB}}>{{splitB this.scenario}}</button>
         {{/each}}
     </form>
 </div>

@@ -41,15 +41,14 @@ h1 {
 #playerSpace {
     overflow: auto;
     position: relative;
-    top: 250px;
-    right: 20px;
+    top: -210px;
     text-align: center;
 }
 
 #situation {
     margin: auto;
     font-family: 'Trade Winds', cursive;
-    color: rgb(224, 224, 224);
+    color: rgb(255, 255, 255);
     text-shadow:
        3px 3px 0 #000,
      -1px -1px 0 #000,  
@@ -79,7 +78,7 @@ h1 {
     overflow: scroll;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
-    color: rgb(224, 224, 224);
+    color: rgb(255, 255, 255);
     background: rgba(25, 145, 201, 0.811);
 }
 

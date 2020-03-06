@@ -59,10 +59,8 @@ app.get("/:id", (req,res)=>{
             res.render("index", {scenarios : data,
                                   choices: data2
                                 })
-        })
-       
-    })
-})
+        });});
+});
 
 app.post("/:id", function(req, res) {
     

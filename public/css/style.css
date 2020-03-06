@@ -30,6 +30,13 @@ h1 {
     text-align: center;
 }
 
+#gameSpace {
+    overflow: auto;
+position: relative;
+    top: 250px;
+    right: -300px;
+}
+
 #playerSpace {
     overflow: auto;
     position: relative;

@@ -41,6 +41,9 @@ h1 {
     margin: 0px;
     padding: 0px;
     background-color: aqua;
+    height: 500px;
+    width: 285px;
+    overflow: scroll;
 }
 
 body,html {

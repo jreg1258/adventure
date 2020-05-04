@@ -4,6 +4,8 @@ const mysql = require('mysql')
 const Handlebars = require('handlebars')
 const app = express()
 const path = require("path")
+const compression = require("compression")
+
 let connection;
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -15,7 +17,7 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
 //require("./routes/adventure-api-routes")(app);
-
+app.use(compression())
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
